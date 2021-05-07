@@ -77,7 +77,9 @@ func (fw *FileWatcher) start(ctx context.Context, conf *Conf, bot *tgbotapi.BotA
 			continue
 		}
 		if strings.Contains(line.Text, fw.Content) {
-			conf.SendMessage(bot, fmt.Sprintf("find %s in %s, line: %s", fw.Content, fw.File, line.Text))
+			msg := fmt.Sprintf("find %s in %s, line: %s", fw.Content, fw.File, line.Text)
+			fmt.Println("[warn]", msg)
+			conf.SendMessage(bot, msg)
 		}
 	}
 }

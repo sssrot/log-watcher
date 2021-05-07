@@ -1,0 +1,1 @@
+watch log file, if line contains some content, send message to telegram chat
