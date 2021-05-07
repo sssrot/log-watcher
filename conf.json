@@ -1,0 +1,9 @@
+{
+    "chat_id": 1,
+    "files": [
+        {
+            "file": "./t.log",
+            "content": "ERR"
+        }
+    ]
+}
