@@ -70,7 +70,7 @@ func pe(err error) {
 }
 
 func (fw *FileWatcher) start(ctx context.Context, conf *Conf, bot *tgbotapi.BotAPI) {
-	t, err := tail.TailFile(fw.File, tail.Config{Follow: true, ReOpen: true})
+	t, err := tail.TailFile(fw.File, tail.Config{Follow: true, ReOpen: true, Location: &tail.SeekInfo{Whence: 2}})
 	pe(err)
 	for line := range t.Lines {
 		if line.Err != nil {
